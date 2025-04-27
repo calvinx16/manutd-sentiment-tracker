@@ -3,7 +3,7 @@ import pandas as pd
 import altair as alt
 import os
 from sentiment_utils import preprocess_data
-from scrape import scrape_tweets
+# from scrape import scrape_tweets
 
 st.title("📊 Manchester United Fan Sentiment Tracker")
 
@@ -23,13 +23,13 @@ if data_source == 'Upload CSV':
         data_path = os.path.join('data', 'sample_tweets.csv')
         df = pd.read_csv(data_path)
 
-elif data_source == 'Scrape Live Tweets':
-    search_query = st.text_input("Enter search query (example: 'Manchester United since:2024-04-21 until:2024-04-22')", "Manchester United since:2024-04-21 until:2024-04-22")
-    limit = st.slider("Number of tweets to scrape", 10, 500, 100)
-
-    if st.button("Scrape Tweets"):
-        df = scrape_tweets(search_query, limit)
-        st.success(f"Scraped {len(df)} tweets!")
+# elif data_source == 'Scrape Live Tweets':
+#     search_query = st.text_input("Enter search query (example: 'Manchester United since:2024-04-21 until:2024-04-22')", "Manchester United since:2024-04-21 until:2024-04-22")
+#     limit = st.slider("Number of tweets to scrape", 10, 500, 100)
+#
+#     if st.button("Scrape Tweets"):
+#         df = scrape_tweets(search_query, limit)
+#         st.success(f"Scraped {len(df)} tweets!")
 
 if 'df' in locals():
     st.write("Original Data", df.head())
@@ -50,7 +50,7 @@ if 'df' in locals():
         y='Count',
         color=alt.Color('Sentiment', scale=color_scale)
     ).properties(
-        title="Fan Sentiment Distribution (Manchester United Colors)"
+        title="Fan Sentiment Distribution"
     )
 
     st.altair_chart(chart, use_container_width=True)
