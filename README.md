@@ -17,3 +17,7 @@ An interactive Streamlit web app to track Manchester United fan sentiment based 
 - Pandas
 
 "Future Upgrade: Live scraping module (currently deactivated for Streamlit compatibility)."
+
+## 🌍 Live App
+
+Check out the live deployed app here: [Streamlit Cloud Link](https://manutd-sentiment-tracker-76wewjnywxfl6yjezsmcac.streamlit.app/)

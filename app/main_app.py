@@ -9,7 +9,7 @@ st.title("📊 Manchester United Fan Sentiment Tracker")
 
 data_source = st.radio(
     "Choose data source:",
-    ('Upload CSV', 'Scrape Live Tweets')
+    ('Upload CSV', 'Scrape Live Tweets (TBC)')
 )
 
 if data_source == 'Upload CSV':
