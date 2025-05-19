@@ -1,6 +1,13 @@
 import pandas as pd
 from textblob import TextBlob
+import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
+
+# Ensure VADER lexicon is downloaded at runtime
+try:
+    nltk.data.find('sentiment/vader_lexicon.zip')
+except LookupError:
+    nltk.download('vader_lexicon')
 
 # Initialize VADER sentiment analyzer
 sia = SentimentIntensityAnalyzer()
