@@ -37,18 +37,18 @@ if 'df' in locals():
     processed_df = preprocess_data(df)
     st.write("Processed Data with Sentiment", processed_df.head())
 
-    sentiment_counts = processed_df['Sentiment'].value_counts().reset_index()
-    sentiment_counts.columns = ['Sentiment', 'Count']
+    sentiment_counts = processed_df['Overall_Sentiment'].value_counts().reset_index()
+    sentiment_counts.columns = ['Overall_Sentiment', 'Count']
 
     color_scale = alt.Scale(
         domain=["Positive", "Neutral", "Negative"],
-        range=["#DA291C", "#FBE122", "#000000"]
+        range=["#DA291C", "#D3D3D3", "#000000"]
     )
 
     chart = alt.Chart(sentiment_counts).mark_bar().encode(
-        x='Sentiment',
+        x='Overall_Sentiment',
         y='Count',
-        color=alt.Color('Sentiment', scale=color_scale)
+        color=alt.Color('Overall_Sentiment', scale=color_scale)
     ).properties(
         title="Fan Sentiment Distribution"
     )

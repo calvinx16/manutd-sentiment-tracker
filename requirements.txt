@@ -3,3 +3,5 @@ pandas
 textblob
 altair
 snscrape
+nltk
+
